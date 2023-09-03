@@ -1,25 +1,27 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
+
+// Generate the password using the rules
 function generatePassword() {
   
   // Objective: return password
-  var passwordToReturn = [];
+  let passwordToReturn = [];
   //
   // what we want to know
   //
   // password size
-  var passwordSize = 0;
+  let passwordSize = 0;
   // types of characters (lower case, upper case, special, numeric)
-  var typesOfCharInPassword=0;
+  let typesOfCharInPassword=0;
   //
   // what we know
   //
@@ -29,12 +31,12 @@ function generatePassword() {
   // to use math functions to generate the code
   // so we will use ASCII password array until
   // the end
-  var passwordASCII=[];
+  let passwordASCII=[];
   //
   // Step 1: Password Length
   // how long is the password?
   //
-  var keepGoing=true;
+  let keepGoing=true;
   while(keepGoing) {    
     
     //
@@ -58,10 +60,10 @@ function generatePassword() {
   // get more information about what character types
   // the password should be made of
   //
-  var useLowerCase = false;
-  var useUpperCase = false;
-  var useNumbers = false;
-  var useSpecial = false;
+  let useLowerCase = false;
+  let useUpperCase = false;
+  let useNumbers = false;
+  let useSpecial = false;
 
   keepGoing=true;
   while(keepGoing) {
@@ -152,8 +154,8 @@ function generatePassword() {
             passwordASCII[passwordASCII.length] = getRandomBetween(97, 122);
           }
           else {
-            var runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
-            for (var i=0; i<runTimes; i++) {
+            let runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
+            for (let i=0; i<runTimes; i++) {
               passwordASCII[passwordASCII.length] = getRandomBetween(97, 122);
             }
           }
@@ -164,8 +166,8 @@ function generatePassword() {
             passwordASCII[passwordASCII.length] = getRandomBetween(65, 90);
           }
           else {
-            var runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
-            for (var i=0; i<runTimes; i++) {
+            let runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
+            for (let i=0; i<runTimes; i++) {
               passwordASCII[passwordASCII.length] = getRandomBetween(65, 90);
             }
           }
@@ -176,8 +178,8 @@ function generatePassword() {
             passwordASCII[passwordASCII.length] = getRandomBetween(48, 57);
           }
           else {
-            var runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
-            for (var i=0; i<runTimes; i++) {
+            let runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
+            for (let i=0; i<runTimes; i++) {
               passwordASCII[passwordASCII.length] = getRandomBetween(48, 57);
             }
           }
@@ -191,8 +193,8 @@ function generatePassword() {
             passwordASCII[passwordASCII.length] = getRandomBetween(123, 126);
           }
           else {
-            var runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
-            for (var i=0; i<runTimes; i++) {
+            let runTimes = math.floor(math.random()*(passwordSize-passwordASCII.length))
+            for (let i=0; i<runTimes; i++) {
               passwordASCII[passwordASCII.length] = getRandomBetween(32, 47);
               passwordASCII[passwordASCII.length] = getRandomBetween(58, 64);
               passwordASCII[passwordASCII.length] = getRandomBetween(91, 96);
@@ -215,7 +217,7 @@ function generatePassword() {
   // code that can now be converted to String equivalent
   // determine password and return it to parent function
   //
-  for (var i=0; i<passwordASCII.length; i++) {
+  for (let i=0; i<passwordASCII.length; i++) {
     passwordToReturn = passwordToReturn + String.fromCharCode(passwordASCII[i]);
   }
   //
