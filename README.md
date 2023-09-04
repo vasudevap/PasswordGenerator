@@ -1,5 +1,13 @@
 # 03 JavaScript: Password Generator
 
+## Application Location
+
+[PASSWORD GENERATOR appilcation](https://vasudevap.github.io/PasswordGenerator/)
+
+## Application Source Repository
+
+[GitHub Repository](https://github.com/vasudevap/PasswordGenerator.git)
+
 ## The Task
 
 This application enables employees to generate random passwords based on criteria that they’ve selected. This app runs in the browser and will dynamically update the HTML and CSS powered by the JavaScript code included in "Assets/js/script.js". This is a responsive user interface that adapts to multiple screen sizes.
@@ -34,5 +42,8 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
+## Mockup
 
-© 2023 Prashant Vasudeva. Confidential and Proprietary. All Rights Reserved.
+![Application Mockup Image](<Assets/img/Password Generator.png>)
+
+© 2023 Prashant Vasudeva. Use at will.
