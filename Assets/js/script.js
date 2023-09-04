@@ -71,19 +71,19 @@ function generatePassword() {
     // prompt for character types to include lowercase
     if (confirm("Use lowercase letters?")) {
       useLowerCase = true;
-      typesOfCharInPassword++;
-      if (passwordASCII.length > 0) {
-        passwordASCII[passwordASCII.length] = getRandomBetween(97, 122);
-      } else {
+      // typesOfCharInPassword++;
+      // if (passwordASCII.length > 0) {
+      //   passwordASCII[passwordASCII.length] = getRandomBetween(97, 122);
+      // } else {
         // add at least one character to the password
         passwordASCII[0] = getRandomBetween(97, 122);
-      }
+      // }
     };
 
     // 3rd prompt for character type to include uppercase
     if (confirm("Use UPPERCASE letters?")) {
       useUpperCase = true;
-      typesOfCharInPassword++;
+      // typesOfCharInPassword++;
       if (passwordASCII.length > 0) {
         passwordASCII[passwordASCII.length] = getRandomBetween(65, 90);
       } else {
@@ -95,7 +95,7 @@ function generatePassword() {
     // 4th prompt for character type to include numeric
     if (confirm("Use Numeric letters?")) {
       useNumbers = true;
-      typesOfCharInPassword++;
+      // typesOfCharInPassword++;
       if (passwordASCII.length > 0) {
         passwordASCII[passwordASCII.length] = getRandomBetween(48, 57);
       } else {
@@ -106,9 +106,9 @@ function generatePassword() {
 
     // 5th prompt for character to include special characters
     if (confirm("Use Special characters?")) {
-      // use has selected to use special characters, so add at least one randomly to the array
+      // user has selected to use special characters, so add at least one randomly to the array
       useSpecial = true;
-      typesOfCharInPassword++;
+      // typesOfCharInPassword++;
       if (passwordASCII.length > 0) {
         switch (Math.floor(Math.random() * 4)) {
           case 0: passwordASCII[passwordASCII.length] = getRandomBetween(32, 47);
@@ -153,28 +153,28 @@ function generatePassword() {
       while (passwordSize > passwordASCII.length) {
 
         // add any lower case letters
-        if (useLowerCase) {
+        if (useLowerCase && (passwordSize > passwordASCII.length)) {
 
           // add 1 lower case character to the password string
           passwordASCII[passwordASCII.length] = getRandomBetween(97, 122);
         }
 
         // add any upper case letters
-        if (useUpperCase) {
+        if (useUpperCase && (passwordSize > passwordASCII.length)) {
 
           // add 1 upper case character to the password string
           passwordASCII[passwordASCII.length] = getRandomBetween(65, 90);
         }
 
         // add any numbers
-        if (useNumbers) {
+        if (useNumbers && (passwordSize > passwordASCII.length)) {
 
           // add 1 number character to the password string
           passwordASCII[passwordASCII.length] = getRandomBetween(48, 57);
         }
 
         // add any special characters
-        if (useSpecial) {
+        if (useSpecial && (passwordSize > passwordASCII.length)) {
 
           // add 1 special character to the password string
           let randomChoice = Math.floor(Math.random() * 4);
@@ -200,7 +200,6 @@ function generatePassword() {
           }
         }
       }
-      // alert("Password criteria accepted!");
       keepGoing = false;
       // if at lease one of the characters was selected, then while loop does not repeat
       // passwordASCII array must now have the same number of elements as character types
